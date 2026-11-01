@@ -1,30 +1,22 @@
 import { NextResponse } from 'next/server';
 
+const FALLBACK_URL = 'https://vuinybayqnnloaqewnsk.supabase.co';
+const FALLBACK_ANON_KEY = 'sb_publishable_KYjDaE6Fdoiyt2CwTUOR4g_ig-BpwDb/';
+
 export async function GET(request: Request) {
-  // Lecture de l'URL de la requête pour forcer le rendu dynamique sans export incompatible
   const { searchParams } = new URL(request.url);
   const limit = searchParams.get('limit') || '300';
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://vuinybayqnnloaqewnsk.supabase.co';
-  const supabaseKey =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.SUPABASE_SECRET_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseKey || supabaseKey.includes('placeholder')) {
-    return NextResponse.json(
-      { products: [], error: 'Missing valid Supabase API key in environment variables' },
-      { status: 500 }
-    );
-  }
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || FALLBACK_URL;
+  const supabaseKey = FALLBACK_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   try {
     const res = await fetch(
-      `${supabaseUrl}/rest/v1/products?select=*&order=viral_score.desc,created_at.desc&limit=${limit}`,
+      $/rest/v1/products?select=*&order=viral_score.desc&limit=$,
       {
         headers: {
           apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
+          Authorization: Bearer $,
           'Content-Type': 'application/json',
         },
         cache: 'no-store',
