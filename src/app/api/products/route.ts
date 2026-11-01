@@ -1,24 +1,28 @@
 import { NextResponse } from 'next/server';
 
-const FALLBACK_URL = 'https://vuinybayqnnloaqewnsk.supabase.co';
-const FALLBACK_ANON_KEY = 'sb_publishable_KYjDaE6Fdoiyt2CwTUOR4g_ig-BpwDb/';
+const SUPABASE_URL = 'https://vuinybayqnnloaqewnsk.supabase.co';
+const PUBLISHABLE_KEY = 'sb_publishable_KYjDaE6Fdoiyt2CwTUOR4g_ig-BpwDb';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const limit = searchParams.get('limit') || '300';
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || FALLBACK_URL;
-  const supabaseKey = FALLBACK_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || SUPABASE_URL;
+  const key = PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+
+  const headers: Record<string, string> = {
+    apikey: key,
+    'Content-Type': 'application/json',
+  };
+  if (key.startsWith('eyJ')) {
+    headers['Authorization'] = `Bearer ${key}`;
+  }
 
   try {
     const res = await fetch(
-      $/rest/v1/products?select=*&order=viral_score.desc&limit=$,
+      `${url}/rest/v1/products?select=*&order=viral_score.desc&limit=${limit}`,
       {
-        headers: {
-          apikey: supabaseKey,
-          Authorization: Bearer $,
-          'Content-Type': 'application/json',
-        },
+        headers,
         cache: 'no-store',
       }
     );
