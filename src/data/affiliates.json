@@ -1,0 +1,64 @@
+﻿{
+    "products":  [
+                     {
+                         "badge":  "Populaire",
+                         "id":  "winter-coat-01",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER01?tag=10jital-21",
+                         "title":  "Manteau Long d\u0027Hiver Imperméable Premium",
+                         "category":  "Manteaux \u0026 Vestes",
+                         "price":  "129.99",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     },
+                     {
+                         "badge":  "Tendance",
+                         "id":  "winter-jacket-02",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER02?tag=10jital-21",
+                         "title":  "Veste Duveteuse Coupe-Vent Thermo-Active",
+                         "category":  "Manteaux \u0026 Vestes",
+                         "price":  "89.99",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     },
+                     {
+                         "badge":  "Indispensable",
+                         "id":  "winter-boots-03",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER03?tag=10jital-21",
+                         "title":  "Bottes de Neige Fourrées Antidérapantes",
+                         "category":  "Chaussures d\u0027Hiver",
+                         "price":  "79.99",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     },
+                     {
+                         "badge":  "-20%",
+                         "id":  "winter-boots-04",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER04?tag=10jital-21",
+                         "title":  "Chaussures de Randonnée d\u0027Hiver Imperméables",
+                         "category":  "Chaussures d\u0027Hiver",
+                         "price":  "95.00",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     },
+                     {
+                         "badge":  "Pack Promo",
+                         "id":  "winter-accessory-05",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER05?tag=10jital-21",
+                         "title":  "Bonnet en Laine Doublé Polaire \u0026 Gants Tactiles",
+                         "category":  "Accessoires d\u0027Hiver",
+                         "price":  "29.99",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     },
+                     {
+                         "badge":  "Nouveau",
+                         "id":  "winter-accessory-06",
+                         "affiliateUrl":  "https://www.amazon.fr/dp/B00WINTER06?tag=10jital-21",
+                         "title":  "Écharpe Cachemire Douce \u0026 Chaud Confort",
+                         "category":  "Accessoires d\u0027Hiver",
+                         "price":  "34.99",
+                         "currency":  "EUR",
+                         "image":  "https://images.unsplash.com/photo-1601925260368-ae2f83cf447f?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                     }
+                 ]
+}

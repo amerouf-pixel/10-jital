@@ -1,0 +1,315 @@
+{
+  "analyses": [
+    {
+      "id": "niche-1793144447810-j87u1g",
+      "createdAt": "2026-10-27T23:40:47.810Z",
+      "input": {
+        "keyword": "accessoire telephone",
+        "sector": "Electronique",
+        "productType": "Coque, chargeur",
+        "market": "France",
+        "category": "physical-accessories"
+      },
+      "keywords": {
+        "observed": [],
+        "suggested": [
+          "accessoire telephone",
+          "Electronique",
+          "Coque, chargeur",
+          "physical-accessories",
+          "accessoire telephone France",
+          "Coque, chargeur Accessoires et produits physiques"
+        ]
+      },
+      "competition": {
+        "competitors": [],
+        "sources": [],
+        "note": "Aucune source externe connectée. Données insuffisantes pour l'analyse de la concurrence.",
+        "sufficient": false
+      },
+      "score": {
+        "value": 100,
+        "max": 100,
+        "level": "high",
+        "confidence": "high",
+        "criteria": [
+          {
+            "name": "Complétude des informations",
+            "weight": 40,
+            "score": 40,
+            "note": ""
+          },
+          {
+            "name": "Précision du mot-clé principal",
+            "weight": 25,
+            "score": 25,
+            "note": ""
+          },
+          {
+            "name": "Cohérence secteur / type de produit",
+            "weight": 20,
+            "score": 20,
+            "note": ""
+          },
+          {
+            "name": "Marché et catégorie définis",
+            "weight": 15,
+            "score": 15,
+            "note": ""
+          }
+        ],
+        "missingData": []
+      },
+      "sources": [
+        {
+          "name": "Saisie utilisateur",
+          "type": "user",
+          "verified": false,
+          "collectedAt": "2026-10-27T23:40:47.810Z"
+        },
+        {
+          "name": "Système 10-JITAL (local)",
+          "type": "system",
+          "verified": false,
+          "collectedAt": "2026-10-27T23:40:47.810Z"
+        }
+      ],
+      "isFavorite": false
+    },
+    {
+      "id": "niche-1793146577398-065xdg",
+      "createdAt": "2026-10-28T00:16:17.398Z",
+      "input": {
+        "keyword": "logiciel gestion stock",
+        "sector": "Logiciel",
+        "productType": "SaaS, abonnement",
+        "market": "Maroc",
+        "category": "software"
+      },
+      "keywords": {
+        "observed": [],
+        "suggested": [
+          "logiciel gestion stock",
+          "Logiciel",
+          "SaaS, abonnement",
+          "software",
+          "logiciel gestion stock Maroc",
+          "SaaS, abonnement Logiciels et applications"
+        ]
+      },
+      "competition": {
+        "competitors": [],
+        "sources": [],
+        "note": "Aucune source externe connectée. Données insuffisantes pour l'analyse de la concurrence.",
+        "sufficient": false
+      },
+      "score": {
+        "value": 100,
+        "max": 100,
+        "level": "high",
+        "confidence": "high",
+        "criteria": [
+          {
+            "name": "Complétude des informations",
+            "weight": 40,
+            "score": 40,
+            "note": ""
+          },
+          {
+            "name": "Précision du mot-clé principal",
+            "weight": 25,
+            "score": 25,
+            "note": ""
+          },
+          {
+            "name": "Cohérence secteur / type de produit",
+            "weight": 20,
+            "score": 20,
+            "note": ""
+          },
+          {
+            "name": "Marché et catégorie définis",
+            "weight": 15,
+            "score": 15,
+            "note": ""
+          }
+        ],
+        "missingData": []
+      },
+      "sources": [
+        {
+          "name": "Saisie utilisateur",
+          "type": "user",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:16:17.398Z"
+        },
+        {
+          "name": "Système 10-JITAL (local)",
+          "type": "system",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:16:17.398Z"
+        }
+      ]
+    },
+    {
+      "id": "niche-1793147252235-ukdluy",
+      "createdAt": "2026-10-28T00:27:32.235Z",
+      "input": {
+        "keyword": "chaussures",
+        "sector": "vetement",
+        "productType": "vetement",
+        "market": "maroc",
+        "category": "other"
+      },
+      "keywords": {
+        "observed": [],
+        "suggested": [
+          "chaussures",
+          "vetement",
+          "other",
+          "chaussures maroc",
+          "vetement Autres niches"
+        ]
+      },
+      "competition": {
+        "competitors": [],
+        "sources": [],
+        "note": "Aucune source externe connectée. Données insuffisantes pour l'analyse de la concurrence.",
+        "sufficient": false
+      },
+      "score": {
+        "value": null,
+        "max": 100,
+        "level": "low",
+        "confidence": "low",
+        "criteria": [
+          {
+            "name": "Complétude des informations",
+            "weight": 40,
+            "score": 40,
+            "note": ""
+          },
+          {
+            "name": "Précision du mot-clé principal",
+            "weight": 25,
+            "score": 25,
+            "note": ""
+          },
+          {
+            "name": "Cohérence secteur / type de produit",
+            "weight": 20,
+            "score": 20,
+            "note": ""
+          },
+          {
+            "name": "Marché et catégorie définis",
+            "weight": 15,
+            "score": 7,
+            "note": ""
+          }
+        ],
+        "missingData": [
+          "Tous les champs de recherche ne sont pas remplis",
+          "Catégorie non spécifiée (Autres)"
+        ]
+      },
+      "sources": [
+        {
+          "name": "Saisie utilisateur",
+          "type": "user",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:27:32.235Z"
+        },
+        {
+          "name": "Système 10-JITAL (local)",
+          "type": "system",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:27:32.235Z"
+        }
+      ]
+    },
+    {
+      "id": "niche-1793147256236-0iwlwg",
+      "createdAt": "2026-10-28T00:27:36.236Z",
+      "input": {
+        "keyword": "chaussures",
+        "sector": "vetement",
+        "productType": "vetement",
+        "market": "maroc",
+        "category": "other"
+      },
+      "keywords": {
+        "observed": [],
+        "suggested": [
+          "chaussures",
+          "vetement",
+          "other",
+          "chaussures maroc",
+          "vetement Autres niches"
+        ]
+      },
+      "competition": {
+        "competitors": [],
+        "sources": [],
+        "note": "Aucune source externe connectée. Données insuffisantes pour l'analyse de la concurrence.",
+        "sufficient": false
+      },
+      "score": {
+        "value": null,
+        "max": 100,
+        "level": "low",
+        "confidence": "low",
+        "criteria": [
+          {
+            "name": "Complétude des informations",
+            "weight": 40,
+            "score": 40,
+            "note": ""
+          },
+          {
+            "name": "Précision du mot-clé principal",
+            "weight": 25,
+            "score": 25,
+            "note": ""
+          },
+          {
+            "name": "Cohérence secteur / type de produit",
+            "weight": 20,
+            "score": 20,
+            "note": ""
+          },
+          {
+            "name": "Marché et catégorie définis",
+            "weight": 15,
+            "score": 7,
+            "note": ""
+          }
+        ],
+        "missingData": [
+          "Tous les champs de recherche ne sont pas remplis",
+          "Catégorie non spécifiée (Autres)"
+        ]
+      },
+      "sources": [
+        {
+          "name": "Saisie utilisateur",
+          "type": "user",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:27:36.236Z"
+        },
+        {
+          "name": "Système 10-JITAL (local)",
+          "type": "system",
+          "verified": false,
+          "collectedAt": "2026-10-28T00:27:36.236Z"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "source": "local",
+    "note": "Analyses de niches locales uniquement. Aucune donnée commerciale externe.",
+    "lastUpdated": "2026-10-28T00:27:36.240Z",
+    "version": "1.0"
+  }
+}

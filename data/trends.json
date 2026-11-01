@@ -1,0 +1,20 @@
+{
+  "observations": [
+    {
+      "id": "trend-1793149265900-eaer6w",
+      "keyword": "accessoire telephone",
+      "category": "physical-accessories",
+      "market": "France",
+      "value": 100,
+      "source": "user",
+      "verified": true,
+      "observedAt": "2026-10-28T01:01:05.900Z"
+    }
+  ],
+  "metadata": {
+    "source": "local",
+    "note": "Observations de tendances locales uniquement. Aucune donnée commerciale externe.",
+    "lastUpdated": "2026-10-28T01:01:05.900Z",
+    "version": "1.0"
+  }
+}

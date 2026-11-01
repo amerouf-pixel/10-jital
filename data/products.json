@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Doudoune Veste Homme — Chaud Hiver Blouson Zippé",
+      "description": "Doudoune d'hiver pour homme, rembourrage épais, fermeture zippée et coupe ajustée.",
+      "price": 143.73,
+      "oldPrice": null,
+      "currency": "MAD",
+      "category": "Mode & Hiver",
+      "image": "https://m.media-amazon.com/images/I/718H-NJ12UL._AC_SL1500_.jpg",
+      "inStock": true,
+      "rating": 4.8,
+      "reviews": 124,
+      "merchantUrl": "https://www.amazon.fr/dp/B0FTDRH6G4",
+      "affiliateUrl": "https://link.amazon/B01R6MNmv",
+      "source": "amazon",
+      "createdAt": "2026-10-31",
+      "updatedAt": "2026-10-31"
+    },
+    {
+      "id": "prod-002",
+      "name": "Manteau de Motard à Col Montant — Style Moto Cuir",
+      "description": "Veste de moto bomber à col montant, effet cuir, manches longues, automne-hiver.",
+      "price": 221.35,
+      "oldPrice": null,
+      "currency": "MAD",
+      "category": "Mode & Hiver",
+      "image": "https://m.media-amazon.com/images/I/71aDOzgc-EL._AC_SL1500_.jpg",
+      "inStock": true,
+      "rating": 4.6,
+      "reviews": 98,
+      "merchantUrl": "https://www.amazon.fr/dp/B0CJBWNQKR",
+      "affiliateUrl": "https://link.amazon/B0cN8owWy",
+      "source": "amazon",
+      "createdAt": "2026-10-31",
+      "updatedAt": "2026-10-31"
+    },
+    {
+      "id": "prod-003",
+      "name": "Veste Homme Automne/Hiver — Impression Lettres",
+      "description": "Veste avec impression typographique, fermeture éclair, poches latérales, coupe normale.",
+      "price": 235.85,
+      "oldPrice": null,
+      "currency": "MAD",
+      "category": "Mode & Hiver",
+      "image": "https://m.media-amazon.com/images/I/61jQjUifDeL._AC_SL1500_.jpg",
+      "inStock": true,
+      "rating": 4.7,
+      "reviews": 156,
+      "merchantUrl": "https://www.amazon.fr/dp/B0H7X3ND5C",
+      "affiliateUrl": "https://link.amazon/B07JvFKfU",
+      "source": "amazon",
+      "createdAt": "2026-10-31",
+      "updatedAt": "2026-10-31"
+    },
+    {
+      "id": "prod-004",
+      "name": "Manteau de Pluie Femme — Imperméable Coupe-vent Léger",
+      "description": "Imperméable féminin léger coupe-vent à capuche, étanche et pliable, pour randonnée et voyage.",
+      "price": 32.11,
+      "oldPrice": null,
+      "currency": "MAD",
+      "category": "Imperméable",
+      "image": "https://m.media-amazon.com/images/I/61m7WdZi-3L._AC_SL1500_.jpg",
+      "inStock": true,
+      "rating": 4.9,
+      "reviews": 215,
+      "merchantUrl": "https://www.amazon.fr/dp/B0FX4YH3C1",
+      "affiliateUrl": "https://link.amazon/B0evq9bhl",
+      "source": "amazon",
+      "createdAt": "2026-10-31",
+      "updatedAt": "2026-10-31"
+    }
+  ],
+  "metadata": {
+    "source": "amazon-affiliate",
+    "note": "Produits Amazon réels liés aux liens d'affiliation partenaires (tag 10jital-21). Prix suivis chaque jour.",
+    "lastUpdated": "2026-10-31",
+    "version": "2.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "projects": [
+    {
+      "id": "ps-1793314061127-mqf25y",
+      "createdAt": "2026-10-29T22:47:41.127Z",
+      "updatedAt": "2026-10-29T22:47:41.127Z",
+      "name": "le petit cahier",
+      "type": "workbook",
+      "niche": "éducation",
+      "audience": "parents",
+      "language": "fr",
+      "idea": "cahier de coloriage",
+      "commercialObjective": "50",
+      "indicativePrice": 200,
+      "deliveryFormat": "https://10jital.gumroad.com/l/le-petit-cahier",
+      "commercialTitle": null,
+      "commercialSubtitle": null,
+      "detailedDescription": null,
+      "benefits": null,
+      "tableOfContents": null,
+      "sectionsContent": null,
+      "gumroadPresentation": null,
+      "coverIdea": null,
+      "qualityChecklist": null,
+      "keywords": null,
+      "source": "manual",
+      "sourceId": null,
+      "status": "idea",
+      "lastExportAt": null
+    }
+  ],
+  "metadata": {
+    "source": "local",
+    "note": "Projets Product Studio locaux uniquement. Aucune donnée commerciale externe.",
+    "lastUpdated": "2026-10-29T22:47:41.129Z",
+    "version": "1.0"
+  }
+}

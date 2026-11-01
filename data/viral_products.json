@@ -1,0 +1,434 @@
+[
+  {
+    "slug": "secret-key",
+    "title": "Secret Key",
+    "description": "Secret Key — Selectionne par l'algorithme 10-JITAL pour son fort potentiel viral et son rapport qualite/prix immediat.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/secret-key",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Personne ne parle encore de Secret Key, pourtant c'est une pepite !",
+      "Arrete de scroller si tu cherches a gagner du temps des aujourd'hui.",
+      "J'ai teste cette ressource tendance pour toi : voici pourquoi tout le monde l'adopte."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-secret-key",
+    "bridge_url": "/go/secret-key"
+  },
+  {
+    "slug": "winneradspy",
+    "title": "WinnerAdSpy",
+    "description": "WinnerAdSpy — Selectionne par l'algorithme 10-JITAL pour son fort potentiel viral et son rapport qualite/prix immediat.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/winneradspy",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Personne ne parle encore de WinnerAdSpy, pourtant c'est une pepite !",
+      "Arrete de scroller si tu cherches a gagner du temps des aujourd'hui.",
+      "J'ai teste cette ressource tendance pour toi : voici pourquoi tout le monde l'adopte."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-winneradspy",
+    "bridge_url": "/go/winneradspy"
+  },
+  {
+    "slug": "ski",
+    "title": "SKI",
+    "description": "SKI â€” Selectionne par l'algorithme 10-JITAL pour son fort potentiel viral et son rapport qualite/prix immediat.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/ski",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Personne ne parle encore de SKI, pourtant c'est une pepite !",
+      "Arrete de scroller si tu cherches a gagner du temps des aujourd'hui.",
+      "J'ai teste cette ressource tendance pour toi : voici pourquoi tout le monde l'adopte."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-ski",
+    "bridge_url": "/go/ski"
+  },
+  {
+    "slug": "specsight",
+    "title": "Specsight : L'accessoire connecté indispensable pour sublimer votre quotidien",
+    "description": "Découvrez Specsight, la pépite tendance du moment à seulement 29 $ qui fait sensation sur les réseaux. Conçu pour allier style et utilité au quotidien, c'est l'article dont tout le monde parle. Ne passez pas à côté de la tendance, commandez le vôtre dès maintenant et rejoignez la communauté 10-JITAL !",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/specsight",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : tu as enfin trouvé l'accessoire tendance dont tout le monde parle sur TikTok.",
+      "Tout le monde s'arrache Specsight à 29$, voici pourquoi tu en as besoin.",
+      "On a testé pour vous la tendance 10-JITAL du moment : est-ce que ça vaut le coup ?"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-specsight",
+    "bridge_url": "/go/specsight"
+  },
+  {
+    "slug": "basetab-ai",
+    "title": "BaseTab AI : L'outil IA indispensable pour booster votre productivité au quotidien",
+    "description": "Découvrez BaseTab AI, la solution dopée à l'intelligence artificielle proposée à seulement 29.00 USD. Conçu pour révolutionner votre façon de travailler et d'organiser vos tâches, cet outil tendance s'intègre parfaitement dans votre routine pour vous faire gagner un temps précieux. Ne passez pas à côté de cette opportunité validée par les créateurs de contenu.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/basetab-ai",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Comment cet outil IA à 29$ change totalement la donne au quotidien 🤯",
+      "J'ai testé BaseTab AI et voici pourquoi tout le monde en parle sur TikTok 📉",
+      "L'astuce produit que vous devez absolument connaître avant qu'il ne soit trop tard 🔥"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-basetab-ai",
+    "bridge_url": "/go/basetab-ai"
+  },
+  {
+    "slug": "coding-wrapped",
+    "title": "Coding Wrapped : Le Bilan Annuel de Code Que Tous les Développeurs Partagent",
+    "description": "Découvre Coding Wrapped, l'outil tendance qui analyse tes stats de code et génère ton récapitulatif annuel personnalisé à partager sur les réseaux. Visualise tes technos préférées, tes lignes écrites et ton temps de dev sous un format ultra-stylé. Idéal pour flex sur LinkedIn, TikTok et Instagram. Accès immédiat pour 29 USD.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/coding-wrapped",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : Tu découvres ton bilan de code de l'année avec Coding Wrapped.",
+      "Voici comment j'ai résumé toute mon année de dev en un seul partage.",
+      "Le Spotify Wrapped des développeurs est enfin dispo, regarde ton score."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-coding-wrapped",
+    "bridge_url": "/go/coding-wrapped"
+  },
+  {
+    "slug": "lumafold-screen-light",
+    "title": "LumaFold : La Veilleuse Écran Ultra-Fine et Pliable pour un Espace de Travail Parfait",
+    "description": "Transformez votre bureau ou votre table de chevet en un espace moderne et épuré avec LumaFold. Conçue pour offrir un éclairage doux et ciblé sans éblouir, cette lampe d'écran pliable s'adapte à tous vos besoins, que ce soit pour travailler tard, lire ou créer du contenu. Compacte, élégante et rechargeable, c'est l'accessoire indispensable pour optimiser votre setup à seulement 29,00 $.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/lumafold-screen-light",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Tu passes tes journées sur ton setup ? Voici le gadget indispensable à 29$ que tout le monde s'arrache.",
+      "Marre des lampes de bureau encombrantes ? Regarde comment cette veilleuse pliable change totalement l'ambiance.",
+      "Le secret pour un bureau propre, minimaliste et bien éclairé sans te ruiner."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-lumafold-screen-light",
+    "bridge_url": "/go/lumafold-screen-light"
+  },
+  {
+    "slug": "cubbypad",
+    "title": "CubbyPad : Le tapis malin qui simplifie votre organisation quotidienne à -29$",
+    "description": "Découvrez le CubbyPad, l'accessoire tendance qui révolutionne votre espace. Conçu pour allier esthétisme et praticité, il s'intègre parfaitement dans votre routine pour vous faire gagner un temps précieux au quotidien. Un must-have repéré en temps réel, disponible dès maintenant à 29,0 USD.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/cubbypad",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : tu as enfin trouvé l'accessoire indispensable pour tout organiser !",
+      "La tendance TikTok du moment à moins de 30 dollars : voici le CubbyPad.",
+      "Pourquoi tout le monde s'arrache le CubbyPad en ce moment ? On teste pour vous."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-cubbypad",
+    "bridge_url": "/go/cubbypad"
+  },
+  {
+    "slug": "pluto-door",
+    "title": "Pluto Door : L'accessoire tendance indispensable pour transformer votre intérieur à 29$",
+    "description": "Découvrez le produit dont tout le monde parle sur les réseaux. Le Pluto Door s'impose comme la tendance déco et pratique du moment pour sublimer votre espace en un instant. Design soigné, installation facile et un rapport qualité-prix imbattable à seulement 29,00 USD. Ne passez pas à côté du gadget viral qui simplifie le quotidien. Commandez le vôtre dès aujourd'hui sur 10-JITAL !",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/pluto-door",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : Tu as enfin trouvé l'accessoire tendance dont tout le monde raffole sur TikTok !",
+      "On a testé le Pluto Door viral à 29$ : est-ce que ça vaut vraiment le coup ?",
+      "Le secret déco que les influenceurs cachent pour transformer leur pièce en 2 minutes !"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-pluto-door",
+    "bridge_url": "/go/pluto-door"
+  },
+  {
+    "slug": "seqora",
+    "title": "Seqora : Le secret tendance à 29$ que tout le monde s'arrache en ce moment",
+    "description": "Vous l'avez sûrement croisé sur votre feed sans mettre de nom dessus. Seqora, c'est l'accessoire viral du moment qui combine design épuré et efficacité redoutable pour un usage quotidien. Proposé à seulement 29 USD, il s'impose déjà comme le must-have de la saison. Stocks limités, commandez le vôtre avant rupture.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/seqora",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Arrêtez tout si vous cherchez le produit dont tout le monde parle sur TikTok !",
+      "Il était partout sur mon FYP, il fallait que je teste Seqora...",
+      "Le meilleur achat à moins de 30$ que j'ai fait cette année, regardez ça."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "active",
+    "id": "local-seqora",
+    "bridge_url": "/go/seqora"
+  },
+  {
+    "slug": "telemetrydev",
+    "title": "telemetry.dev | L'outil de suivi indispensable pour développeurs et créateurs",
+    "description": "Ne laissez plus vos données au hasard. telemetry.dev vous offre un suivi précis et en temps réel pour optimiser vos projets et booster votre productivité au quotidien. Un accès direct et efficace pour seulement 29.00 USD. Testez-le dès aujourd'hui et transformez votre façon de analyser vos performances.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/telemetry-dev",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Tu perds du temps avec tes analyses ? Regarde ça.",
+      "L'outil secret des développeurs malins en 2024.",
+      "Comment suivre tes données en temps réel sans effort."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-telemetrydev",
+    "bridge_url": "/go/telemetrydev"
+  },
+  {
+    "slug": "ac-bridge",
+    "title": "Adaptateur AC Bridge 10-JITAL : L'Accessoire Tendance Indispensable",
+    "description": "Ne passez pas à côté de l'accessoire dont tout le monde parle. Le AC Bridge de 10-JITAL combine design moderne et utilité au quotidien pour seulement 29,00 USD. Simplifiez vos branchements et optimisez votre setup dès aujourd'hui.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/ac-bridge",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Tout le monde s'arrache cet accessoire viral 10-JITAL ! 🔌",
+      "Tu cherches le gadget indispensable de ton setup ? Le voilà. ✨",
+      "L'accessoire tech le plus tendance du moment est enfin dispo à 29$. 🚀"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-ac-bridge",
+    "bridge_url": "/go/ac-bridge"
+  },
+  {
+    "slug": "spaceo",
+    "title": "SpaceO - L'accessoire high-tech tendance pour booster votre quotidien à 29$",
+    "description": "Découvrez SpaceO, l'objet viral du moment qui combine design futuriste et utilité au quotidien. À seulement 29 $, c'est l'accessoire incontournable repéré par les créateurs de contenu pour upgrader votre setup. Quantités limitées, commandez le vôtre dès maintenant !",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/spaceo",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : Tu viens de trouver l'accessoire tech le plus stylé de l'année à moins de 30$.",
+      "Tout le monde s'arrache ce produit viral sur les réseaux... Voici SpaceO !",
+      "Arrêtez tout ! J'ai testé la tendance 10-JITAL la plus populaire du moment."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-spaceo",
+    "bridge_url": "/go/spaceo"
+  },
+  {
+    "slug": "backenly",
+    "title": "Backenly : L'accessoire viral indispensable pour votre quotidien à 29$",
+    "description": "Découvrez Backenly, la tendance du moment qui cartonne sur les réseaux. Conçu pour simplifier votre quotidien avec style, cet accessoire au rapport qualité-prix imbattable à 29,00 $ s'arrache déjà. Ne passez pas à côté de la référence e-commerce dont tout le monde parle. Commandez le vôtre dès maintenant et profitez de notre sélection validée par la communauté.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/backenly-2",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Tout le monde s'arrache Backenly en ce moment, voici pourquoi !",
+      "Enfin testé : est-ce que Backenly vaut vraiment le coup à 29$ ?",
+      "La tendance TikTok que vous voyez partout est enfin disponible !"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-backenly",
+    "bridge_url": "/go/backenly"
+  },
+  {
+    "slug": "github-copilot-fusion",
+    "title": "GitHub Copilot Fusion : Le Guide Ultime pour Booster Votre Productivité de Dev à 29$",
+    "description": "Transformez votre façon de coder avec GitHub Copilot Fusion. Ne perdez plus de temps sur les tâches répétitives et écrivez du code plus propre et plus rapidement. Une opportunité incontournable pour les développeurs qui veulent coder plus intelligemment, disponible dès maintenant pour seulement 29,00 USD.",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/github-copilot-fusion",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "Comment doubler ma vitesse de code sans effort ?",
+      "Le secret des développeurs ultra-productifs enfin dévoilé.",
+      "Arrêtez de perdre du temps sur du code répétitif, voici la solution."
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-github-copilot-fusion",
+    "bridge_url": "/go/github-copilot-fusion"
+  },
+  {
+    "slug": "agnos",
+    "title": "Agnos : Le gadget tendance indispensable à 29$ qui cartonne sur les réseaux",
+    "description": "Vous l'avez sûrement déjà croisé sur votre fil d'actualité. Agnos est la pépite high-tech du moment que tout le monde s'arrache. Proposé à seulement 29 USD, il combine design épuré et utilité immédiate au quotidien. Ne passez pas à côté de la tendance virale de la saison !",
+    "category": "tech-tools",
+    "image_url": null,
+    "price_amount": 29.0,
+    "currency_origin": "USD",
+    "affiliate_url": "https://www.producthunt.com/products/agnos",
+    "affiliate_network": "custom",
+    "commission_rate": 30.0,
+    "viral_score": 75,
+    "hooks": [
+      "POV : tu as enfin trouvé le produit dont tout le monde parle sur TikTok.",
+      "Arrêtez tout ! Voici la pépite à 29$ que les influenceurs cachent.",
+      "Pourquoi tout le monde s'arrache Agnos en ce moment ?"
+    ],
+    "target_countries": [
+      "MA",
+      "FR",
+      "US"
+    ],
+    "in_stock": true,
+    "status": "pending",
+    "id": "local-agnos",
+    "bridge_url": "/go/agnos"
+  }
+]
