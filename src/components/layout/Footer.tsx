@@ -56,9 +56,6 @@ export default function Footer() {
             <div className="space-y-2">
               <Link href="/" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Accueil</Link>
               <Link href="/shop" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Boutique</Link>
-              <Link href="/blog" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Blog</Link>
-              <Link href="/trends" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Tendances</Link>
-              <Link href="/prices" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Prix</Link>
               <Link href="/alerts" className="text-gray-400 text-sm hover:text-violet-400 transition-colors">Alertes</Link>
             </div>
           </div>

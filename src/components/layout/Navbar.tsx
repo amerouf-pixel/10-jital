@@ -8,14 +8,10 @@ import { useCurrency } from "@/context/CurrencyContext";
 const NAV_LINKS = [
   { href: "/", label: "Accueil" },
   { href: "/shop", label: "Boutique" },
-  { href: "/blog", label: "Blog" },
-  { href: "/tendances", label: "Tendances" },
-  { href: "/prix", label: "Prix" },
   { href: "/alertes", label: "Alertes" },
   { href: "/niche-detector", label: "Niche Detector" },
   { href: "/maps-scraper", label: "Maps Scraper" },
   { href: "/opportunity", label: "Opportunity" },
-  { href: "/studio", label: "Studio" },
 ];
 
 const CURRENCIES = [
