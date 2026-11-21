@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 10-JITAL
 
-## Getting Started
+Application web de découverte et de présentation de produits, avec une vitrine de produits tendance et des liens vers les offres affiliées. Le dépôt contient également une interface d’administration et une API de produits.
 
-First, run the development server:
+**Démo :** [10-jital.vercel.app](https://10-jital.vercel.app)
+
+## Fonctionnalités visibles
+
+- Affichage des produits et de leurs informations (image, catégorie, description et prix).
+- Accès à la boutique depuis la page d’accueil.
+- Liens vers les offres des produits.
+- Chargement des produits via l’API `/api/products`.
+- Mode démonstration configurable.
+
+## Technologies
+
+Next.js, React, TypeScript, Supabase, Tailwind CSS et Vercel Analytics. Le projet comprend aussi des dépendances pour Three.js et Google GenAI.
+
+## Installation et lancement
+
+Prérequis : Node.js et npm.
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir ensuite [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour lancer les vérifications ou préparer une version de production :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-## Learn More
+## Configuration
 
-To learn more about Next.js, take a look at the following resources:
+Consulter `.env.example` pour les variables disponibles. Le mode démonstration est activé par défaut. Les clés et secrets réels doivent être renseignés uniquement dans `.env.local` ou dans la configuration sécurisée de l’hébergeur — ne jamais les committer.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Les clés d’affiliation et les tâches de vérification des prix sont désactivées ou non configurées par défaut ; vérifiez les intégrations avant de les activer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le site public est hébergé sur Vercel. Pour un autre déploiement, configurer les variables d’environnement nécessaires et suivre les commandes de build Next.js ci-dessus.
