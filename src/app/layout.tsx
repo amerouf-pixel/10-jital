@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Brand10Jital from './components/Brand10Jital';
 import "./globals.css";
 import JitalSpider from "@/components/layout/JitalSpider";
