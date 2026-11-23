@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viral Hook & Script Studio — Générateur TikTok / Reels / Shorts | 10JITAL</title>
+  <meta name="description" content="Générateur gratuit de hooks viraux et scripts vidéos courts (TikTok, Reels, YouTube Shorts) avec chronomètre de lecture par 10JITAL.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1040px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:2rem; border-bottom:1px solid var(--border); padding-bottom:1.2rem; }
+    .brand { font-weight:800; font-size:1.25rem; color:var(--accent); text-decoration:none; letter-spacing:1px; }
+    .nav { display:flex; gap:0.65rem; flex-wrap:wrap; }
+    .nav a { color:var(--muted); text-decoration:none; font-size:0.88rem; padding:0.4rem 0.75rem; border:1px solid var(--border); border-radius:8px; }
+    .nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:1.85rem; margin:0 0 0.4rem; }
+    .sub { color:var(--muted); margin:0 0 1.6rem; }
+    .grid { display:grid; grid-template-columns:0.95fr 1.05fr; gap:1.5rem; }
+    @media(max-width:850px){ .grid { grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.4rem; }
+    .field { margin-bottom:1rem; }
+    label { display:block; font-size:0.85rem; color:var(--muted); margin-bottom:0.35rem; font-weight:600; }
+    input, select, textarea { width:100%; background:#020617; border:1px solid #334155; color:var(--text); padding:0.7rem 0.85rem; border-radius:10px; font-size:0.92rem; font-family:inherit; }
+    textarea { min-height:260px; font-family:Consolas,monospace; line-height:1.6; resize:vertical; }
+    input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); }
+    .metrics { display:flex; gap:0.75rem; margin-bottom:1rem; }
+    .metric { flex:1; background:#020617; border:1px solid var(--border); border-radius:10px; padding:0.7rem; text-align:center; }
+    .metric span { display:block; font-size:0.75rem; color:var(--muted); }
+    .metric strong { font-size:1.25rem; color:var(--cyan); }
+    .actions { display:flex; gap:0.65rem; flex-wrap:wrap; margin-top:1rem; }
+    .btn { flex:1; padding:0.75rem 1rem; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:0.9rem; text-align:center; text-decoration:none; }
+    .btn-primary { background:var(--accent); color:#0b1120; }
+    .btn-cyan { background:var(--cyan); color:#0b1120; }
+    .btn-sec { background:#1e293b; color:var(--text); }
+    footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/outils.html" class="brand">10JITAL • STUDIO</a>
+      <nav class="nav">
+        <a href="/outils.html">Tous les Outils</a>
+        <a href="/calculateur-marge.html">Calculateur Marge</a>
+        <a href="/cleanlead.html">CleanLead Lite</a>
+        <a href="https://harzyyouness.gumroad.com/" target="_blank" rel="noopener">Kits Gumroad</a>
+      </nav>
+    </header>
+
+    <h1>Viral Hook &amp; Script Studio</h1>
+    <p class="sub">Générez des accroches virales et des scripts structurés de 15 à 45 secondes pour TikTok, Instagram Reels et YouTube Shorts.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="field">
+          <label for="niche">Niche / Thématique</label>
+          <select id="niche">
+            <option value="ecom">E-commerce / Business / COD</option>
+            <option value="gaming">Gaming / Setup / Tech</option>
+            <option value="productivite">Productivité / IA / Outils</option>
+            <option value="freelance">Freelance / Revenus en ligne</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="topic">Sujet précis ou Produit à mettre en avant</label>
+          <input type="text" id="topic" value="mon outil gratuit pour calculer sa marge COD en 10 secondes">
+        </div>
+        <div class="field">
+          <label for="angle">Angle du Hook (Accroche 0-3s)</label>
+          <select id="angle">
+            <option value="erreur">Erreur coûteuse ("Arrête de faire ça...")</option>
+            <option value="secret">Outil / Astuce méconnue ("Personne ne parle de...")</option>
+            <option value="resultat">Résultat rapide ("Comment faire X en 10 secondes")</option>
+            <option value="comparatif">Comparatif ("Avant vs Après")</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cta">Appel à l'action (CTA fin de vidéo)</label>
+          <input type="text" id="cta" value="Le lien gratuit est dans ma bio sur 10-jital.vercel.app">
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" onclick="generateScript()">Générer le Script</button>
+          <button class="btn btn-sec" onclick="generateHooksOnly()">5 Hooks Rapides</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="metrics">
+          <div class="metric"><span>Mots</span><strong id="mWords">0</strong></div>
+          <div class="metric"><span>Durée estimée</span><strong id="mSec" style="color:var(--accent)">0 s</strong></div>
+          <div class="metric"><span>Rythme</span><strong style="color:var(--green)">150 m/min</strong></div>
+        </div>
+        <label for="scriptOut">Script prêt à tourner (modifiable)</label>
+        <textarea id="scriptOut" oninput="updateMetrics()"></textarea>
+        <div class="actions">
+          <button class="btn btn-cyan" onclick="copyScript()">Copier le Script</button>
+          <a href="https://harzyyouness.gumroad.com/" target="_blank" rel="noopener" class="btn btn-sec">Kits Créateur Pro</a>
+        </div>
+        <div id="msg" style="font-size:0.82rem; color:var(--green); margin-top:0.6rem; min-height:1.2rem;"></div>
+      </div>
+    </div>
+
+    <footer>© 10JITAL — Outil gratuit 100 % local pour créateurs de contenu.</footer>
+  </div>
+
+  <script>
+    const hooksMap = {
+      erreur: [
+        "Arrête de perdre du temps et de l'argent à la main : voici {topic}.",
+        "90 % des débutants font cette erreur tous les jours — règle-la avec {topic}.",
+        "Ne lance rien avant d'avoir testé {topic}."
+      ],
+      secret: [
+        "Personne ne parle de cet outil gratuit : {topic}.",
+        "Je viens de découvrir {topic} et ça remplace 2 heures de travail.",
+        "L'astuce que les pros gardent pour eux : {topic}."
+      ],
+      resultat: [
+        "Voici comment gagner un temps fou en 10 secondes grâce à {topic}.",
+        "Regarde ce qui se passe quand tu utilises {topic} (zéro budget requis).",
+        "De zéro à un résultat propre en 3 clics avec {topic}."
+      ],
+      comparatif: [
+        "Avant je payais 20 € pour ça. Maintenant j'utilise {topic} gratuitement.",
+        "Méthode lente vs méthode rapide : teste {topic} et vois la différence.",
+        "Pourquoi tout le monde passe sur {topic} cette année."
+      ]
+    };
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function generateScript() {
+      const topic = document.getElementById('topic').value.trim() || "cet outil gratuit";
+      const angle = document.getElementById('angle').value;
+      const cta   = document.getElementById('cta').value.trim() || "Lien en bio !";
+      const hook  = pick(hooksMap[angle]).replace("{topic}", topic);
+
+      const script =
+`[0:00 - 0:03 | HOOK VISUEL + ACCROCHE]
+"${hook}"
+(Visuel : gros plan écran en mouvement ou résultat final dès la 1re seconde)
+
+[0:03 - 0:12 | PROBLÈME -> DÉMO RAPIDE]
+"La plupart des gens bloquent encore dessus ou paient un freelance à chaque fois.
+Regarde : tu ouvres la page, tu entres tes données, tu cliques une seule fois... et c'est réglé."
+(Visuel : capture d'écran rapide en accéléré x1.5)
+
+[0:12 - 0:20 | PREUVE & BÉNÉFICE]
+"C'est 100 % gratuit, ça tourne directement dans ton navigateur sans inscription et tu peux exporter le résultat proprement."
+
+[0:20 - 0:25 | APPEL À L'ACTION]
+"Enregistre cette vidéo pour ne pas la perdre. ${cta}"`;
+
+      document.getElementById('scriptOut').value = script;
+      updateMetrics();
+    }
+
+    function generateHooksOnly() {
+      const topic = document.getElementById('topic').value.trim() || "cet outil";
+      const all = [...hooksMap.erreur, ...hooksMap.secret, ...hooksMap.resultat, ...hooksMap.comparatif]
+        .sort(() => 0.5 - Math.random()).slice(0, 5)
+        .map((h, i) => `${i + 1}. ${h.replace("{topic}", topic)}`).join("\n\n");
+      document.getElementById('scriptOut').value = "=== 5 HOOKS VIRAUX PRÊTS À TESTER ===\n\n" + all;
+      updateMetrics();
+    }
+
+    function updateMetrics() {
+      const txt = document.getElementById('scriptOut').value.replace(/\[.*?\]/g, '').trim();
+      const words = txt ? txt.split(/\s+/).length : 0;
+      const secs = Math.round((words / 150) * 60);
+      document.getElementById('mWords').textContent = words;
+      document.getElementById('mSec').textContent = secs + " s";
+    }
+
+    function copyScript() {
+      const txt = document.getElementById('scriptOut').value + "\n\n---\nGénéré avec Viral Hook Studio — https://10-jital.vercel.app/hook-studio.html";
+      navigator.clipboard.writeText(txt).then(() => {
+        document.getElementById('msg').textContent = "Script copié dans le presse-papiers !";
+        setTimeout(() => document.getElementById('msg').textContent = "", 2500);
+      });
+    }
+
+    generateScript();
+  </script>
+</body>
+</html>
