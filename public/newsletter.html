@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recevoir les Nouveaux Outils & Bons Plans — 10JITAL</title>
+  <meta name="description" content="Recevez nos nouveaux micro-outils gratuits, sélections matériel et bons plans business 10JITAL.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1.5rem; }
+    .box { width:100%; max-width:520px; background:var(--card); border:1px solid var(--border); border-radius:20px; padding:2rem; }
+    .brand { font-weight:800; color:var(--accent); text-decoration:none; letter-spacing:1px; font-size:1rem; display:inline-block; margin-bottom:1rem; }
+    h1 { margin:0 0 0.5rem; font-size:1.7rem; }
+    p { color:var(--muted); margin:0 0 1.4rem; font-size:0.95rem; }
+    .field { margin-bottom:1rem; }
+    label { display:block; font-size:0.84rem; color:#cbd5e1; margin-bottom:0.35rem; font-weight:600; }
+    input, select { width:100%; background:#020617; border:1px solid #334155; color:var(--text); padding:0.75rem 0.9rem; border-radius:10px; font-size:0.95rem; }
+    .btn { width:100%; padding:0.85rem; border-radius:10px; border:none; font-weight:800; font-size:0.98rem; cursor:pointer; background:var(--accent); color:#0b1120; margin-top:0.4rem; }
+    .btn-sec { display:block; text-align:center; margin-top:0.75rem; padding:0.7rem; border-radius:10px; background:#1e293b; color:var(--text); text-decoration:none; font-size:0.88rem; font-weight:700; }
+    .ok { display:none; margin-top:1rem; padding:0.85rem; border-radius:10px; background:rgba(16,185,129,0.14); border:1px solid var(--green); color:var(--green); font-size:0.9rem; }
+    .export-bar { margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:var(--muted); }
+    .mini-btn { background:#1e293b; color:var(--cyan); border:1px solid #334155; padding:0.35rem 0.65rem; border-radius:7px; cursor:pointer; font-size:0.78rem; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <a href="/bio.html" class="brand">← 10JITAL • ACCÈS RAPIDE</a>
+    <h1>Alertes Outils &amp; Bons Plans</h1>
+    <p>Soyez averti dès qu'un nouvel outil gratuit, template Gumroad ou sélection matériel 10JITAL est publié.</p>
+
+    <form id="leadForm" onsubmit="saveLead(event)">
+      <div class="field">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" required placeholder="Ex: Youssef">
+      </div>
+      <div class="field">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" required placeholder="vous@exemple.com">
+      </div>
+      <div class="field">
+        <label for="profil">Votre profil principal</label>
+        <select id="profil">
+          <option value="E-commerce / COD">E-commerce / COD</option>
+          <option value="Freelance / Agence">Freelance / Agence</option>
+          <option value="Créateur TikTok / Reels / YouTube">Créateur TikTok / Reels / YouTube</option>
+          <option value="Gaming / Setup Tech">Gaming / Setup Tech</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Recevoir les nouveautés 10JITAL</button>
+    </form>
+
+    <div class="ok" id="okBox">
+      Inscription enregistrée localement ! Accédez dès maintenant à nos outils : <a href="/outils.html" style="color:#fff;font-weight:700;">Ouvrir la Boîte à Outils →</a>
+    </div>
+
+    <a href="/outils.html" class="btn-sec">Accéder directement aux 4 Outils Gratuits</a>
+
+    <div class="export-bar">
+      <span>Inscrits locaux : <strong id="leadCount">0</strong></span>
+      <button class="mini-btn" onclick="exportLeadsCsv()">Exporter CSV</button>
+    </div>
+  </div>
+
+  <script>
+    function refreshCount() {
+      const list = JSON.parse(localStorage.getItem('jital_leads') || '[]');
+      document.getElementById('leadCount').textContent = list.length;
+    }
+    function saveLead(e) {
+      e.preventDefault();
+      const list = JSON.parse(localStorage.getItem('jital_leads') || '[]');
+      list.unshift({
+        date: new Date().toISOString(),
+        prenom: document.getElementById('prenom').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        profil: document.getElementById('profil').value
+      });
+      localStorage.setItem('jital_leads', JSON.stringify(list));
+      document.getElementById('okBox').style.display = 'block';
+      document.getElementById('leadForm').reset();
+      refreshCount();
+    }
+    function exportLeadsCsv() {
+      const list = JSON.parse(localStorage.getItem('jital_leads') || '[]');
+      if (!list.length) return alert('Aucun contact enregistré pour le moment.');
+      const lines = ['Date;Prenom;Email;Profil', ...list.map(x => `${x.date};${x.prenom};${x.email};${x.profil}`)];
+      const blob = new Blob(["\uFEFF" + lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '10JITAL_Leads_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+    }
+    refreshCount();
+  </script>
+</body>
+</html>
