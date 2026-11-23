@@ -122,10 +122,14 @@
             <label for="feePct">Commission plateforme / paiement (%)</label>
             <input type="number" id="feePct" value="0" min="0" max="100" step="0.1" oninput="calc()">
           </div>
-          <div class="field">
+                    <div class="field">
             <label for="returnCost">Frais de retour par colis non livré</label>
             <input type="number" id="returnCost" value="10" min="0" step="0.5" oninput="calc()">
           </div>
+        </div>
+        <div class="field">
+          <label for="irRate">Provision estimée Taxe sur le Revenu / IR (% sur bénéfice positif)</label>
+          <input type="number" id="irRate" value="15" min="0" max="60" step="0.5" oninput="calc()">
         </div>
       </div>
 
@@ -224,6 +228,7 @@
       const cpa = parseFloat(document.getElementById('cpa').value) || 0;
       const feePct = parseFloat(document.getElementById('feePct').value) || 0;
       const retCost = parseFloat(document.getElementById('returnCost').value) || 0;
+      const irRate = Math.min(60, Math.max(0, parseFloat(document.getElementById('irRate').value) || 0)) / 100;
       const confRate = mode === 'cod' ? Math.min(100, Math.max(1, parseFloat(document.getElementById('confirmRate').value) || 100)) / 100 : 1;
       const delivRate = mode === 'cod' ? Math.min(100, Math.max(1, parseFloat(document.getElementById('deliveryRate').value) || 100)) / 100 : 1;
 
@@ -238,8 +243,10 @@
       const totalFees = revenue * (feePct / 100);
       const totalReturns = returned * retCost;
 
-      const netTotal = revenue - (totalAds + totalProduct + totalShip + totalFees + totalReturns);
-      const netUnit = netTotal / delivered;
+            const netTotal = revenue - (totalAds + totalProduct + totalShip + totalFees + totalReturns);
+      const irProvision = netTotal > 0 ? netTotal * irRate : 0;
+      const netAfterIr = netTotal - irProvision;
+      const netUnit = netAfterIr / delivered;
       const marginPct = revenue > 0 ? (netTotal / revenue) * 100 : 0;
       const unitContribBeforeAds = sell - cost - ship - (sell * feePct / 100) - ((returned / delivered) * retCost);
       const breakEvenRoas = unitContribBeforeAds > 0 ? (sell / unitContribBeforeAds) : 0;
