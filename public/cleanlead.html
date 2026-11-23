@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanLead Pro Lite — Nettoyeur CSV & Prospects Gratuit | 10JITAL</title>
+  <meta name="description" content="Outil gratuit 100% local pour dédoublonner vos listes clients, extraire emails et numéros de téléphone et exporter un CSV propre en 1 clic.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1080px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:2rem; border-bottom:1px solid var(--border); padding-bottom:1.2rem; }
+    .brand { font-weight:800; font-size:1.25rem; color:var(--accent); text-decoration:none; letter-spacing:1px; }
+    .nav { display:flex; gap:0.65rem; flex-wrap:wrap; }
+    .nav a { color:var(--muted); text-decoration:none; font-size:0.88rem; padding:0.4rem 0.75rem; border:1px solid var(--border); border-radius:8px; }
+    .nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:1.85rem; margin:0 0 0.4rem; }
+    .sub { color:var(--muted); margin:0 0 1.6rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    @media(max-width:850px){ .grid { grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.4rem; }
+    label { display:block; font-size:0.85rem; color:var(--muted); margin-bottom:0.45rem; font-weight:600; }
+    textarea { width:100%; min-height:240px; background:#020617; border:1px solid #334155; color:var(--text); padding:0.85rem; border-radius:10px; font-family:Consolas,monospace; font-size:0.88rem; resize:vertical; }
+    textarea:focus { outline:none; border-color:var(--accent); }
+    .opts { display:flex; flex-wrap:wrap; gap:0.8rem; margin:1rem 0; font-size:0.86rem; color:#cbd5e1; }
+    .opts label { display:flex; align-items:center; gap:0.4rem; margin:0; cursor:pointer; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; margin-bottom:1rem; }
+    .stat { background:#020617; border:1px solid var(--border); border-radius:10px; padding:0.75rem; text-align:center; }
+    .stat span { display:block; font-size:0.75rem; color:var(--muted); }
+    .stat strong { font-size:1.3rem; color:var(--accent); }
+    .actions { display:flex; gap:0.65rem; flex-wrap:wrap; margin-top:1rem; }
+    .btn { flex:1; padding:0.72rem 1rem; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:0.9rem; text-align:center; text-decoration:none; }
+    .btn-primary { background:var(--accent); color:#0b1120; }
+    .btn-cyan { background:var(--cyan); color:#0b1120; }
+    .btn-sec { background:#1e293b; color:var(--text); }
+    .cta-box { margin-top:2rem; background:linear-gradient(135deg,#0f172a,#1e293b); border:1px solid #334155; border-radius:16px; padding:1.5rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; }
+    .cta-box h3 { margin:0 0 0.3rem; color:var(--accent); }
+    .cta-box p { margin:0; color:#cbd5e1; font-size:0.9rem; }
+    footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/outils.html" class="brand">10JITAL • LAB</a>
+      <nav class="nav">
+        <a href="/outils.html">Tous les Outils</a>
+        <a href="/calculateur-marge.html">Calculateur Marge COD</a>
+        <a href="/">Boutique 10JITAL</a>
+        <a href="https://harzyyouness.gumroad.com/" target="_blank" rel="noopener">Gumroad Pro</a>
+      </nav>
+    </header>
+
+    <h1>CleanLead Pro Lite — Nettoyeur CSV &amp; Prospects</h1>
+    <p class="sub">Collez vos listes en vrac (Excel, WhatsApp, CRM, texte brut) : suppression des doublons, extraction emails/téléphones et export CSV 100 % local.</p>
+
+    <div class="grid">
+      <div class="card">
+        <label for="rawInput">1. Collez vos données brutes ou chargez un fichier (.csv / .txt)</label>
+        <textarea id="rawInput" placeholder="Exemple :&#10;Ahmed, ahmed@gmail.com, 06 12 34 56 78&#10;Sara - sara.pro@mail.com - +212 6 99 88 77 66&#10;ahmed@gmail.com (doublon)"></textarea>
+        <div class="opts">
+          <label><input type="checkbox" id="optDedup" checked> Supprimer doublons</label>
+          <label><input type="checkbox" id="optTrim" checked> Nettoyer espaces</label>
+          <label><input type="checkbox" id="optLowerEmail" checked> Emails en minuscules</label>
+          <label><input type="checkbox" id="optExtract"> Extraire uniquement Emails + Téléphones</label>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" onclick="processLeads()">Nettoyer maintenant</button>
+          <button class="btn btn-sec" onclick="document.getElementById('fileIn').click()">Importer CSV/TXT</button>
+          <input type="file" id="fileIn" accept=".csv,.txt" style="display:none" onchange="loadFile(event)">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="stats">
+          <div class="stat"><span>Lignes entrées</span><strong id="stIn">0</strong></div>
+          <div class="stat"><span>Lignes propres</span><strong id="stOut" style="color:var(--green)">0</strong></div>
+          <div class="stat"><span>Doublons retirés</span><strong id="stDup" style="color:var(--cyan)">0</strong></div>
+        </div>
+        <label for="cleanOutput">2. Résultat nettoyé prêt à l'emploi</label>
+        <textarea id="cleanOutput" readonly placeholder="Le résultat propre apparaîtra ici..."></textarea>
+        <div class="actions">
+          <button class="btn btn-cyan" onclick="downloadCsv()">Exporter en CSV</button>
+          <button class="btn btn-sec" onclick="copyClean()">Copier (+ signature)</button>
+        </div>
+        <div id="msg" style="font-size:0.82rem; color:var(--green); margin-top:0.6rem; min-height:1.2rem;"></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Besoin d'automatiser votre prospection &amp; vos ventes ?</h3>
+        <p>Découvrez nos outils autonomes sur Gumroad et nos sélections équipement bureau/business sur 10JITAL.</p>
+      </div>
+      <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">
+        <a href="https://harzyyouness.gumroad.com/" target="_blank" rel="noopener" class="btn btn-primary">Voir les Kits Gumroad</a>
+        <a href="/outils.html" class="btn btn-sec">Autres Outils Gratuits</a>
+      </div>
+    </div>
+
+    <footer>© 10JITAL — Traitement 100 % navigateur (vos fichiers prospects ne quittent jamais votre PC).</footer>
+  </div>
+
+  <script>
+    function loadFile(ev) {
+      const f = ev.target.files[0]; if (!f) return;
+      const r = new FileReader();
+      r.onload = () => { document.getElementById('rawInput').value = r.result; processLeads(); };
+      r.readAsText(f);
+    }
+
+    function processLeads() {
+      const raw = document.getElementById('rawInput').value || '';
+      const dedup = document.getElementById('optDedup').checked;
+      const trim = document.getElementById('optTrim').checked;
+      const lowerEmail = document.getElementById('optLowerEmail').checked;
+      const extract = document.getElementById('optExtract').checked;
+
+      const lines = raw.split(/\r?\n/).filter(l => l.trim().length > 0);
+      let processed = [];
+
+      if (extract) {
+        const emailRe = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+        const phoneRe = /(?:\+?\d{1,3}[\s.-]?)?(?:\(?\d{2,4}\)?[\s.-]?){2,4}\d{2,4}/g;
+        lines.forEach(l => {
+          const emails = l.match(emailRe) || [];
+          const phones = (l.match(phoneRe) || []).map(p => p.replace(/[\s.-]+/g, ' ').trim()).filter(p => p.replace(/\D/g,'').length >= 8);
+          if (emails.length || phones.length) {
+            const e = emails[0] ? (lowerEmail ? emails[0].toLowerCase() : emails[0]) : '';
+            const p = phones[0] || '';
+            processed.push(`${e};${p}`);
+          }
+        });
+      } else {
+        processed = lines.map(l => {
+          let s = trim ? l.replace(/\s+/g, ' ').trim() : l;
+          if (lowerEmail) s = s.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, m => m.toLowerCase());
+          return s;
+        });
+      }
+
+      const before = processed.length;
+      if (dedup) {
+        const seen = new Set();
+        processed = processed.filter(item => {
+          const key = item.toLowerCase();
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+      }
+
+      document.getElementById('stIn').textContent = lines.length;
+      document.getElementById('stOut').textContent = processed.length;
+      document.getElementById('stDup').textContent = Math.max(0, before - processed.length);
+      document.getElementById('cleanOutput').value = (extract ? "Email;Telephone\n" : "") + processed.join('\n');
+    }
+
+    function downloadCsv() {
+      const content = document.getElementById('cleanOutput').value;
+      if (!content) return;
+      const blob = new Blob(["\uFEFF" + content], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'CleanLead_10JITAL_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+    }
+
+    function copyClean() {
+      const content = document.getElementById('cleanOutput').value;
+      if (!content) return;
+      const withSig = content + "\n\n---\nNettoyé gratuitement avec CleanLead Lite — https://10-jital.vercel.app/cleanlead.html";
+      navigator.clipboard.writeText(withSig).then(() => {
+        document.getElementById('msg').textContent = 'Liste copiée dans le presse-papiers !';
+        setTimeout(() => document.getElementById('msg').textContent = '', 2500);
+      });
+    }
+  </script>
+</body>
+</html>
