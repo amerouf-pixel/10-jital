@@ -3,6 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { useCurrency } from "@/context/CurrencyContext";
+import { toShortAffiliateLink } from "@/utils/affiliate";
+import SocialShareButtons from "@/components/products/SocialShareButtons";
 
 export const CATALOG_OVERRIDES: Record<string, {
   name: string;
@@ -26,8 +28,13 @@ export const CATALOG_OVERRIDES: Record<string, {
       "GPS multi-bandes intégré + 100 modes sportifs",
       "Autonomie longue durée : 7 jours"
     ],
+<<<<<<< HEAD
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
     affiliateUrl: "https://www.amazon.fr/s?k=montre+connectee+sport+gps"
+=======
+    image: "https://m.media-amazon.com/images/I/718H-NJ12UL._AC_SL1500_.jpg",
+    affiliateUrl: "https://www.amazon.fr/dp/B0FTDRH6G4?tag=10jital-21"
+>>>>>>> 5db02cc (Branding 10JITAL)
   },
   "prod-002": {
     name: "Veste Duveteuse Thermo-Active",
@@ -41,8 +48,13 @@ export const CATALOG_OVERRIDES: Record<string, {
       "Capuche ajustable et poignets élastiqués",
       "Poches latérales zippées doublées polaire"
     ],
+<<<<<<< HEAD
     image: "https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=900&q=80",
     affiliateUrl: "https://www.amazon.fr/s?k=doudoune+veste+thermique+hiver"
+=======
+    image: "https://m.media-amazon.com/images/I/71aDOzgc-EL._AC_SL1500_.jpg",
+    affiliateUrl: "https://www.amazon.fr/dp/B0CJBWNQKR?tag=10jital-21"
+>>>>>>> 5db02cc (Branding 10JITAL)
   },
   "prod-003": {
     name: "Bottes de Neige Antidérapantes",
@@ -56,8 +68,13 @@ export const CATALOG_OVERRIDES: Record<string, {
       "Extérieur 100% imperméable",
       "Maintien renforcé de la cheville"
     ],
+<<<<<<< HEAD
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
     affiliateUrl: "https://www.amazon.fr/s?k=bottes+de+neige+fourrees+antiderapantes"
+=======
+    image: "https://m.media-amazon.com/images/I/61jQjUifDeL._AC_SL1500_.jpg",
+    affiliateUrl: "https://www.amazon.fr/dp/B0H7X3ND5C?tag=10jital-21"
+>>>>>>> 5db02cc (Branding 10JITAL)
   },
   "prod-004": {
     name: "Casque Sans Fil ProANC",
@@ -71,6 +88,7 @@ export const CATALOG_OVERRIDES: Record<string, {
       "Coussinets à mémoire de forme ultra-confortables",
       "Bluetooth 5.3 multipoint"
     ],
+<<<<<<< HEAD
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
     affiliateUrl: "https://www.amazon.fr/s?k=casque+bluetooth+reduction+de+bruit"
   },
@@ -103,6 +121,10 @@ export const CATALOG_OVERRIDES: Record<string, {
     ],
     image: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=900&q=80",
     affiliateUrl: "https://www.amazon.fr/s?k=clavier+mecanique+rgb+sans+fil"
+=======
+    image: "https://m.media-amazon.com/images/I/61m7WdZi-3L._AC_SL1500_.jpg",
+    affiliateUrl: "https://www.amazon.fr/dp/B0FX4YH3C1?tag=10jital-21"
+>>>>>>> 5db02cc (Branding 10JITAL)
   }
 };
 
@@ -119,7 +141,16 @@ export function ProductCard(props: any) {
   const priceEur = rawPrice > 0 ? rawPrice : (override?.priceEur ?? 59.99);
   const image = override?.image || item?.image || item?.imageUrl || item?.image_url || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80";
 
+<<<<<<< HEAD
   let formattedPrice = `${priceEur.toFixed(0)} EUR`;
+=======
+  // Aucun lien long ne s'affiche jamais : normalisation → /dp/{ASIN}?tag=10jital-21
+  const affiliateUrl = toShortAffiliateLink(
+    override?.affiliateUrl || item?.affiliateUrl || item?.affiliate_url || item?.merchantUrl || ""
+  );
+
+  let formattedPrice = `${priceEur.toFixed(2)} EUR`;
+>>>>>>> 5db02cc (Branding 10JITAL)
   try {
     const currencyCtx: any = useCurrency?.();
     if (currencyCtx?.formatPrice) {
@@ -155,9 +186,17 @@ export function ProductCard(props: any) {
           </h3>
         </Link>
 
+<<<<<<< HEAD
         <p className="text-[11px] sm:text-sm text-gray-400 line-clamp-2 mb-2.5 sm:mb-4 leading-snug">
+=======
+        <p className="text-sm text-gray-400 line-clamp-2 mb-3">
+>>>>>>> 5db02cc (Branding 10JITAL)
           {description}
         </p>
+
+        {affiliateUrl && (
+          <SocialShareButtons url={affiliateUrl} title={name} className="mb-4" />
+        )}
       </div>
 
       <div className="pt-2.5 sm:pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2">

@@ -6,6 +6,8 @@ import { useParams } from "next/navigation";
 import { DEMO_PRODUCTS } from "@/lib/demo-data";
 import { CATALOG_OVERRIDES } from "@/components/products/ProductCard";
 import { useCurrency } from "@/context/CurrencyContext";
+import { toShortAffiliateLink } from "@/utils/affiliate";
+import SocialShareButtons from "@/components/products/SocialShareButtons";
 
 function ProductDetailContent() {
   const params = useParams();
@@ -33,7 +35,9 @@ function ProductDetailContent() {
       "Expédition rapide et garantie constructeur",
       "Conversion automatique multi-devises"
     ],
-    affiliateUrl: fromDemo?.affiliateUrl || fromDemo?.affiliate_url || preset?.affiliateUrl || "https://www.amazon.fr"
+    affiliateUrl: toShortAffiliateLink(
+      fromDemo?.affiliateUrl || fromDemo?.affiliate_url || preset?.affiliateUrl || "https://www.amazon.fr"
+    )
   };
 
   let formattedPrice = `${product.priceEur.toFixed(2)} EUR`;
@@ -122,6 +126,13 @@ function ProductDetailContent() {
             >
               Acheter / Voir l&apos;offre →
             </a>
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
+              Partager :
+            </span>
+            <SocialShareButtons url={product.affiliateUrl} title={product.name} />
           </div>
         </div>
       </div>

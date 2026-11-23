@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import Script from 'next/script';
 import { Suspense } from 'react';
 
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import "./globals.css";
+=======
+import Brand10Jital from './components/Brand10Jital';
+﻿import "./globals.css";
+>>>>>>> 5db02cc (Branding 10JITAL)
 import JitalSpider from "@/components/layout/JitalSpider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -41,10 +46,15 @@ export default function RootLayout({
           <Navbar />
         </Suspense>
         <main className="flex-1">{children}</main>
+<<<<<<< HEAD
         <JitalSpider />
         <WhatsAppButton />
         <Analytics />
               <Suspense fallback={null}><Script src="https://10jital-cosmic-monitor.vercel.app/10jital_store_sensor.js" strategy="afterInteractive" /></Suspense>
+=======
+              <JitalSpider />
+            <Brand10Jital />
+>>>>>>> 5db02cc (Branding 10JITAL)
       </body>
     </html>
   );
