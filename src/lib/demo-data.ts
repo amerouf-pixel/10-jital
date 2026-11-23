@@ -117,7 +117,4 @@ export const DEMO_BLOG_POSTS: BlogPost[] = [
 export const DEMO_PRICE_ALERTS: PriceAlert[] = [];
 
 
-export const DEMO_BLOG_POSTS: any[] = [];
-export type Product = any;
-export type BlogPost = any;
 export const getDemoProducts = async () => DEMO_PRODUCTS;
