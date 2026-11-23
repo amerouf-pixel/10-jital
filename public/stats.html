@@ -76,10 +76,13 @@
           <span style="display:block;font-size:0.75rem;color:var(--muted);">À mettre de côté (IR)</span>
           <strong id="sIrOut" style="font-size:1.2rem;color:#f59e0b;">1 500,00 MAD</strong>
         </div>
-        <div style="background:#020617;border:1px solid var(--border);border-radius:10px;padding:0.65rem 0.85rem;">
+                <div style="background:#020617;border:1px solid var(--border);border-radius:10px;padding:0.65rem 0.85rem;">
           <span style="display:block;font-size:0.75rem;color:var(--muted);">Net Disponible Après IR</span>
           <strong id="sNetOut" style="font-size:1.2rem;color:#10b981;">8 500,00 MAD</strong>
         </div>
+      </div>
+      <div class="actions" style="margin-bottom:0;">
+        <button class="btn btn-sec" onclick="exportIrSummary()">Exporter Récap IR (.txt)</button>
       </div>
     </div>
 
@@ -157,7 +160,27 @@
       a.download = '10JITAL_LocalStorage_' + new Date().toISOString().slice(0,10) + '.json';
       a.click();
     }
-        function calcIrPilot() {
+            function exportIrSummary() {
+      const net = Math.max(0, parseFloat(document.getElementById('sNetBeforeIr').value) || 0);
+      const pct = Math.min(60, Math.max(0, parseFloat(document.getElementById('sIrPct').value) || 0));
+      const ir = document.getElementById('sIrOut').textContent;
+      const after = document.getElementById('sNetOut').textContent;
+      const txt = [
+        "=== RECAPITULATIF TRESORERIE & PROVISION IR (10JITAL) ===",
+        "Date : " + new Date().toISOString().slice(0, 10),
+        "Bénéfice Net Avant IR : " + net.toLocaleString('fr-FR', { minimumFractionDigits:2, maximumFractionDigits:2 }) + " MAD",
+        "Taux de provision estimé : " + pct + " %",
+        "Provision IR à mettre de côté : " + ir,
+        "Net Disponible Après IR : " + after,
+        "Note : estimation indicative de gestion, à valider avec un expert-comptable / DGI."
+      ].join("\n");
+      const blob = new Blob(["\uFEFF" + txt], { type: "text/plain;charset=utf-8;" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "10JITAL_Provision_IR_" + new Date().toISOString().slice(0, 10) + ".txt";
+      a.click();
+    }
+    function calcIrPilot() {
       const net = Math.max(0, parseFloat(document.getElementById('sNetBeforeIr').value) || 0);
       const pct = Math.min(60, Math.max(0, parseFloat(document.getElementById('sIrPct').value) || 0)) / 100;
       const ir = net * pct;
