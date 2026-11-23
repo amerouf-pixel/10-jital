@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord Local & Leads — 10JITAL</title>
+  <meta name="description" content="Consultez et exportez vos leads capturés localement, l'état des pages de l'écosystème 10JITAL et vos sauvegardes JSON.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1060px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:2rem; border-bottom:1px solid var(--border); padding-bottom:1.2rem; }
+    .brand { font-weight:800; font-size:1.25rem; color:var(--accent); text-decoration:none; letter-spacing:1px; }
+    .nav { display:flex; gap:0.65rem; flex-wrap:wrap; }
+    .nav a { color:var(--muted); text-decoration:none; font-size:0.88rem; padding:0.4rem 0.75rem; border:1px solid var(--border); border-radius:8px; }
+    .nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:1.85rem; margin:0 0 0.4rem; }
+    .sub { color:var(--muted); margin:0 0 1.6rem; }
+    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:1.6rem; }
+    .kpi { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.1rem; }
+    .kpi span { display:block; font-size:0.78rem; color:var(--muted); }
+    .kpi strong { font-size:1.5rem; color:var(--accent); margin-top:0.2rem; display:block; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.4rem; margin-bottom:1.4rem; }
+    .actions { display:flex; gap:0.7rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .btn { padding:0.65rem 1rem; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:0.88rem; text-decoration:none; display:inline-block; }
+    .btn-primary { background:var(--accent); color:#0b1120; }
+    .btn-cyan { background:var(--cyan); color:#0b1120; }
+    .btn-sec { background:#1e293b; color:var(--text); }
+    table { width:100%; border-collapse:collapse; margin-top:0.8rem; }
+    th, td { padding:0.6rem 0.5rem; border-bottom:1px solid var(--border); text-align:left; font-size:0.86rem; }
+    th { color:var(--muted); }
+    .routes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:0.75rem; }
+    .route-link { display:block; padding:0.8rem 1rem; background:#020617; border:1px solid var(--border); border-radius:10px; color:var(--cyan); text-decoration:none; font-size:0.88rem; font-weight:600; }
+    .route-link:hover { border-color:var(--accent); color:var(--text); }
+    footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/bio.html" class="brand">10JITAL • PILOTAGE</a>
+      <nav class="nav">
+        <a href="/bio.html">Link-in-Bio</a>
+        <a href="/outils.html">Outils Gratuits</a>
+        <a href="/pack-pro.html">Pack Pro (39 €)</a>
+        <a href="/newsletter.html">Capture Leads</a>
+        <a href="/">Boutique</a>
+      </nav>
+    </header>
+
+    <h1>Pilotage Local &amp; Base Leads 10JITAL</h1>
+    <p class="sub">Centralisez vos leads capturés localement, exportez vos données en CSV/JSON et accédez à toutes les pages du tunnel.</p>
+
+    <div class="kpis">
+      <div class="kpi"><span>Leads enregistrés</span><strong id="kLeads">0</strong></div>
+      <div class="kpi"><span>Pages actives du tunnel</span><strong style="color:var(--green)">10</strong></div>
+      <div class="kpi"><span>Offre Bundle Phare</span><strong style="color:var(--cyan)">39 €</strong></div>
+      <div class="kpi"><span>Tag Partenaire</span><strong>10jital-21</strong></div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 0.8rem;font-size:1.15rem;color:var(--accent);">Actions de données locales</h2>
+      <div class="actions">
+        <button class="btn btn-cyan" onclick="exportLeadsCsv()">Exporter Leads (.csv)</button>
+        <button class="btn btn-primary" onclick="exportAllLocalJson()">Backup Complet LocalStorage (.json)</button>
+        <a href="/newsletter.html" class="btn btn-sec">+ Ajouter un lead</a>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Prénom</th><th>Email</th><th>Profil</th></tr>
+        </thead>
+        <tbody id="leadsTable"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 0.8rem;font-size:1.15rem;color:var(--accent);">Pages publiées sur 10-jital.vercel.app</h2>
+      <div class="routes-grid">
+        <a href="/" class="route-link">/ (Boutique Hybride)</a>
+        <a href="/bio.html" class="route-link">/bio.html (Link-in-Bio)</a>
+        <a href="/outils.html" class="route-link">/outils.html (Hub Outils)</a>
+        <a href="/pack-pro.html" class="route-link">/pack-pro.html (Bundle 39 €)</a>
+        <a href="/newsletter.html" class="route-link">/newsletter.html (Capture)</a>
+        <a href="/calculateur-marge.html" class="route-link">/calculateur-marge.html</a>
+        <a href="/cleanlead.html" class="route-link">/cleanlead.html</a>
+        <a href="/hook-studio.html" class="route-link">/hook-studio.html</a>
+        <a href="/devis-express.html" class="route-link">/devis-express.html</a>
+        <a href="/sitemap.xml" class="route-link">/sitemap.xml</a>
+      </div>
+    </div>
+
+    <footer>© 10JITAL — Données 100 % locales dans votre navigateur.</footer>
+  </div>
+
+  <script>
+    function loadLeads() {
+      const list = JSON.parse(localStorage.getItem('jital_leads') || '[]');
+      document.getElementById('kLeads').textContent = list.length;
+      const tbody = document.getElementById('leadsTable');
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="4" style="color:#94a3b8;">Aucun lead enregistré pour l\'instant. Testez la page Capture Leads.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = list.map(item => `
+        <tr>
+          <td>${(item.date || '').slice(0, 10)}</td>
+          <td>${item.prenom || ''}</td>
+          <td>${item.email || ''}</td>
+          <td>${item.profil || ''}</td>
+        </tr>
+      `).join('');
+    }
+    function exportLeadsCsv() {
+      const list = JSON.parse(localStorage.getItem('jital_leads') || '[]');
+      if (!list.length) return alert('Aucun lead à exporter.');
+      const lines = ['Date;Prenom;Email;Profil', ...list.map(x => `${x.date};${x.prenom};${x.email};${x.profil}`)];
+      const blob = new Blob(["\uFEFF" + lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '10JITAL_Leads_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+    }
+    function exportAllLocalJson() {
+      const dump = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        dump[k] = localStorage.getItem(k);
+      }
+      const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), data: dump }, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '10JITAL_LocalStorage_' + new Date().toISOString().slice(0,10) + '.json';
+      a.click();
+    }
+    loadLeads();
+  </script>
+</body>
+</html>
