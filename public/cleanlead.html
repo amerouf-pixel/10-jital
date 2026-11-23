@@ -40,6 +40,38 @@
     .cta-box p { margin:0; color:#cbd5e1; font-size:0.9rem; }
     footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
   </style>
+<style id="jital-responsive-mobile-pc">
+  html { -webkit-text-size-adjust: 100%; }
+  body { overflow-x: hidden; }
+  img, svg, canvas, video { max-width: 100%; height: auto; }
+  table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  input, select, textarea { font-size: 16px; max-width: 100%; }
+
+  /* Tablettes & écrans moyens */
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr !important; }
+    .wrap { padding: 1.4rem 1rem 3rem !important; }
+  }
+
+  /* Mobiles (iPhone / Android) */
+  @media (max-width: 640px) {
+    body { padding: 0.75rem !important; }
+    .wrap { padding: 1rem 0.75rem 2.5rem !important; }
+    header { flex-direction: column !important; align-items: flex-start !important; gap: 0.75rem !important; }
+    .nav { width: 100%; display: flex; flex-wrap: wrap; gap: 0.45rem !important; }
+    .nav a { margin-left: 0 !important; font-size: 0.82rem !important; padding: 0.42rem 0.65rem !important; }
+    h1 { font-size: 1.45rem !important; line-height: 1.25 !important; }
+    .row2, .metrics, .kpis, .routes-grid { grid-template-columns: 1fr !important; }
+    .card, .box, .hero { padding: 1.05rem !important; border-radius: 14px !important; }
+    .btn, .cta, .btn-sec { width: 100%; text-align: center; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .link { padding: 0.85rem 0.95rem !important; }
+  }
+
+  /* Grands écrans PC / Desktop */
+  @media (min-width: 1280px) {
+    .wrap { max-width: 1160px !important; }
+  }
+</style>
 </head>
 <body>
   <div class="wrap">
