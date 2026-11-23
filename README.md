@@ -45,3 +45,10 @@ Les clés d’affiliation et les tâches de vérification des prix sont désacti
 ## Déploiement
 
 Le site public est hébergé sur Vercel. Pour un autre déploiement, configurer les variables d’environnement nécessaires et suivre les commandes de build Next.js ci-dessus.
+
+---
+
+## Écosystème 10JITAL
+- **Boutique globale** : https://10-jital.vercel.app/
+- **Second Cerveau (Arbre Analytique)** : https://jitalcerv.vercel.app/
+- **Gaming & App** : https://jitalx.vercel.app/ & https://jitalx.vercel.app/app
