@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparateur Budget vs Pro & Coût d'Usage — 10JITAL</title>
+  <meta name="description" content="Comparez une alternative économique (Budget) et une option durable (Pro) selon votre fréquence d'utilisation et votre budget en MAD, EUR ou USD.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1040px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:2rem; border-bottom:1px solid var(--border); padding-bottom:1.2rem; }
+    .brand { font-weight:800; font-size:1.25rem; color:var(--accent); text-decoration:none; letter-spacing:1px; }
+    .nav { display:flex; gap:0.65rem; flex-wrap:wrap; }
+    .nav a { color:var(--muted); text-decoration:none; font-size:0.88rem; padding:0.4rem 0.75rem; border:1px solid var(--border); border-radius:8px; }
+    .nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:1.85rem; margin:0 0 0.4rem; }
+    .sub { color:var(--muted); margin:0 0 1.6rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    @media(max-width:840px){ .grid { grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.4rem; }
+    .row2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .field { margin-bottom:1rem; }
+    label { display:block; font-size:0.84rem; color:var(--muted); margin-bottom:0.35rem; font-weight:600; }
+    input, select { width:100%; background:#020617; border:1px solid #334155; color:var(--text); padding:0.65rem 0.8rem; border-radius:10px; font-size:0.92rem; }
+    .verdict { background:#020617; border:1px solid var(--cyan); border-radius:12px; padding:1.1rem; margin-bottom:1rem; }
+    .verdict strong { display:block; font-size:1.15rem; color:var(--green); margin-bottom:0.3rem; }
+    .metrics { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:1rem; }
+    .m-box { background:#020617; border:1px solid var(--border); border-radius:10px; padding:0.85rem; }
+    .m-box span { display:block; font-size:0.78rem; color:var(--muted); }
+    .m-box strong { font-size:1.25rem; margin-top:0.2rem; display:block; color:var(--accent); }
+    .btn { display:inline-block; padding:0.72rem 1rem; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:0.9rem; text-decoration:none; text-align:center; }
+    .btn-primary { background:var(--accent); color:#0b1120; }
+    .btn-sec { background:#1e293b; color:var(--text); }
+    footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/outils.html" class="brand">10JITAL • LAB</a>
+      <nav class="nav">
+        <a href="/outils.html">Tous les Outils</a>
+        <a href="/calculateur-marge.html">Marge COD</a>
+        <a href="/cleanlead.html">CleanLead</a>
+        <a href="/hook-studio.html">Hook Studio</a>
+        <a href="/devis-express.html">Devis PDF</a>
+      </nav>
+    </header>
+
+    <h1>Comparateur Budget vs Pro (Coût à l'Usage)</h1>
+    <p class="sub">Comparez une option économique et une option durable selon la durée de vie et vos jours d'utilisation par mois.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="row2">
+          <div class="field">
+            <label for="cur">Devise</label>
+            <select id="cur" onchange="runComp()">
+              <option value="MAD" selected>MAD (DH)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="USD">USD ($)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="daysMonth">Jours d'utilisation / mois</label>
+            <input type="number" id="daysMonth" value="22" min="1" max="31" oninput="runComp()">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="budgetPrice">Prix Option Budget</label>
+            <input type="number" id="budgetPrice" value="120" min="0" step="1" oninput="runComp()">
+          </div>
+          <div class="field">
+            <label for="budgetMonths">Durée estimée Budget (mois)</label>
+            <input type="number" id="budgetMonths" value="4" min="1" step="1" oninput="runComp()">
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="proPrice">Prix Option Pro / Durable</label>
+            <input type="number" id="proPrice" value="380" min="0" step="1" oninput="runComp()">
+          </div>
+          <div class="field">
+            <label for="proMonths">Durée estimée Pro (mois)</label>
+            <input type="number" id="proMonths" value="24" min="1" step="1" oninput="runComp()">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="verdict">
+          <span style="font-size:0.78rem;color:var(--cyan);font-weight:700;">RECOMMANDATION CALCULÉE</span>
+          <strong id="vChoice">-</strong>
+          <div id="vDetail" style="font-size:0.88rem;color:#cbd5e1;"></div>
+        </div>
+
+        <div class="metrics">
+          <div class="m-box">
+            <span>Coût / jour (Budget)</span>
+            <strong id="mBudgetDay">0 MAD</strong>
+          </div>
+          <div class="m-box">
+            <span>Coût / jour (Pro)</span>
+            <strong id="mProDay" style="color:var(--cyan)">0 MAD</strong>
+          </div>
+          <div class="m-box">
+            <span>Coût cumulé sur 24 mois (Budget)</span>
+            <strong id="mBudget24">0 MAD</strong>
+          </div>
+          <div class="m-box">
+            <span>Économie sur 24 mois avec Pro</span>
+            <strong id="mSave24" style="color:var(--green)">0 MAD</strong>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0.7rem;flex-wrap:wrap;">
+          <a href="/" class="btn btn-primary">Voir la Boutique 10JITAL</a>
+          <a href="/bio.html" class="btn btn-sec">Tous les liens</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 10JITAL — Comparateur 100 % local.</footer>
+  </div>
+
+  <script>
+    function fmt(v, c) {
+      return v.toLocaleString('fr-FR', { minimumFractionDigits:2, maximumFractionDigits:2 }) + ' ' + c;
+    }
+    function runComp() {
+      const c = document.getElementById('cur').value;
+      const days = Math.max(1, parseFloat(document.getElementById('daysMonth').value) || 22);
+      const bP = parseFloat(document.getElementById('budgetPrice').value) || 0;
+      const bM = Math.max(1, parseFloat(document.getElementById('budgetMonths').value) || 1);
+      const pP = parseFloat(document.getElementById('proPrice').value) || 0;
+      const pM = Math.max(1, parseFloat(document.getElementById('proMonths').value) || 1);
+
+      const bDay = bP / (bM * days);
+      const pDay = pP / (pM * days);
+      const b24 = (24 / bM) * bP;
+      const p24 = (24 / pM) * pP;
+      const save24 = b24 - p24;
+
+      document.getElementById('mBudgetDay').textContent = fmt(bDay, c);
+      document.getElementById('mProDay').textContent = fmt(pDay, c);
+      document.getElementById('mBudget24').textContent = fmt(b24, c);
+      document.getElementById('mSave24').textContent = fmt(save24, c);
+
+      if (pDay < bDay) {
+        document.getElementById('vChoice').textContent = 'Option Pro plus rentable à l\'usage';
+        document.getElementById('vDetail').textContent = `À ${days} j/mois, l'option Pro revient à ${fmt(pDay, c)}/jour contre ${fmt(bDay, c)}/jour pour l'option Budget.`;
+      } else {
+        document.getElementById('vChoice').textContent = 'Option Budget adaptée à votre rythme actuel';
+        document.getElementById('vDetail').textContent = `Pour un usage ponctuel ou court terme, l'option Budget limite l'investissement initial (${fmt(bP, c)}).`;
+      }
+    }
+    runComp();
+  </script>
+</body>
+</html>
