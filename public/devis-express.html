@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devis & Facture Express PDF (MAD/EUR/USD) — 10JITAL</title>
+  <meta name="description" content="Générateur gratuit de devis et factures professionnels avec calcul TVA, marge interne privée et export PDF en 1 clic par 10JITAL.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root { --bg:#0b1120; --card:#0f172a; --border:#1e293b; --text:#f8fafc; --muted:#94a3b8; --accent:#f59e0b; --cyan:#06b6d4; --green:#10b981; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:1060px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:2rem; border-bottom:1px solid var(--border); padding-bottom:1.2rem; }
+    .brand { font-weight:800; font-size:1.25rem; color:var(--accent); text-decoration:none; letter-spacing:1px; }
+    .nav { display:flex; gap:0.65rem; flex-wrap:wrap; }
+    .nav a { color:var(--muted); text-decoration:none; font-size:0.88rem; padding:0.4rem 0.75rem; border:1px solid var(--border); border-radius:8px; }
+    .nav a:hover { color:var(--text); border-color:var(--accent); }
+    h1 { font-size:1.85rem; margin:0 0 0.4rem; }
+    .sub { color:var(--muted); margin:0 0 1.6rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.5rem; margin-bottom:1.4rem; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    @media(max-width:800px){ .grid3, .grid2 { grid-template-columns:1fr; } }
+    label { display:block; font-size:0.82rem; color:var(--muted); margin-bottom:0.3rem; font-weight:600; }
+    input, select, textarea { width:100%; background:#020617; border:1px solid #334155; color:var(--text); padding:0.62rem 0.8rem; border-radius:8px; font-size:0.9rem; font-family:inherit; }
+    table { width:100%; border-collapse:collapse; margin-top:1rem; }
+    th, td { padding:0.65rem 0.5rem; border-bottom:1px solid var(--border); text-align:left; font-size:0.88rem; }
+    th { color:var(--muted); font-weight:700; }
+    .num { text-align:right; }
+    .btn { padding:0.68rem 1.1rem; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:0.9rem; text-decoration:none; display:inline-block; }
+    .btn-primary { background:var(--accent); color:#0b1120; }
+    .btn-cyan { background:var(--cyan); color:#0b1120; }
+    .btn-sec { background:#1e293b; color:var(--text); }
+    .btn-del { background:transparent; color:#ef4444; border:1px solid #7f1d1d; padding:0.35rem 0.6rem; border-radius:6px; cursor:pointer; }
+    .totals { max-width:360px; margin-left:auto; margin-top:1.2rem; }
+    .tot-row { display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid var(--border); font-size:0.95rem; }
+    .tot-row.grand { font-size:1.25rem; font-weight:800; color:var(--accent); border-bottom:none; padding-top:0.7rem; }
+    .private-box { margin-top:1.2rem; padding:1rem; border:1px dashed var(--cyan); border-radius:12px; background:rgba(6,182,212,0.06); display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center; }
+    .actions { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.2rem; }
+    .print-sig { display:none; margin-top:2rem; font-size:11px; color:#64748b; text-align:center; border-top:1px solid #e2e8f0; padding-top:10px; }
+    footer { margin-top:2.5rem; text-align:center; color:var(--muted); font-size:0.85rem; }
+
+    @media print {
+      body { background:#ffffff; color:#0f172a; }
+      header, .no-print, .private-box, footer, .btn-del { display:none !important; }
+      .wrap { padding:0; max-width:100%; }
+      .card { background:#ffffff; border:none; padding:0; margin-bottom:1rem; }
+      input, select, textarea { background:transparent; border:none; color:#0f172a; padding:2px 0; font-weight:600; }
+      th, td { border-color:#cbd5e1; color:#0f172a; }
+      .tot-row { border-color:#cbd5e1; color:#0f172a; }
+      .tot-row.grand { color:#0f172a; }
+      .print-sig { display:block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/outils.html" class="brand">10JITAL • LAB</a>
+      <nav class="nav">
+        <a href="/outils.html">Tous les Outils</a>
+        <a href="/calculateur-marge.html">Marge COD</a>
+        <a href="/cleanlead.html">CleanLead</a>
+        <a href="/hook-studio.html">Hook Studio</a>
+      </nav>
+    </header>
+
+    <div class="no-print">
+      <h1>Générateur de Devis &amp; Facture Express (PDF)</h1>
+      <p class="sub">Créez un devis professionnel en 30 secondes (MAD, EUR, USD), contrôlez votre marge interne (masquée à l'impression) et exportez en PDF.</p>
+    </div>
+
+    <div class="card">
+      <div class="grid3">
+        <div>
+          <label>Type de document</label>
+          <select id="docType"><option value="DEVIS">DEVIS</option><option value="FACTURE">FACTURE</option></select>
+        </div>
+        <div>
+          <label>Numéro</label>
+          <input type="text" id="docNum" value="DEV-2026-001">
+        </div>
+        <div>
+          <label>Devise</label>
+          <select id="currency" onchange="recalc()">
+            <option value="MAD" selected>MAD (DH)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="USD">USD ($)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:1.2rem;">
+        <div>
+          <label>Émetteur (Votre entreprise / Nom)</label>
+          <textarea id="emitter" rows="3">10JITAL Studio&#10;Casablanca, Maroc&#10;contact@10jital.com</textarea>
+        </div>
+        <div>
+          <label>Client (Destinataire)</label>
+          <textarea id="client" rows="3">Nom du Client / Société&#10;Adresse / Ville&#10;Email ou Téléphone</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:40%;">Prestation / Produit</th>
+            <th class="num" style="width:12%;">Qté</th>
+            <th class="num" style="width:18%;">Prix Unit. HT</th>
+            <th class="num no-print" style="width:16%;">Coût Interne</th>
+            <th class="num" style="width:14%;">Total HT</th>
+            <th class="no-print" style="width:40px;"></th>
+          </tr>
+        </thead>
+        <tbody id="rowsBody"></tbody>
+      </table>
+
+      <div class="actions no-print">
+        <button class="btn btn-sec" onclick="addRow('Prestation / Service', 1, 500, 150)">+ Ajouter une ligne</button>
+      </div>
+
+      <div class="grid2" style="margin-top:1.2rem; align-items:start;">
+        <div>
+          <label>Conditions de paiement / Notes</label>
+          <textarea id="notes" rows="3">Validité du devis : 30 jours.&#10;Acompte de 40 % à la commande, solde à la livraison.</textarea>
+        </div>
+        <div class="totals">
+          <div class="tot-row"><span>Sous-total HT</span><strong id="tSub">0.00 MAD</strong></div>
+          <div class="tot-row">
+            <span>TVA (%) <input type="number" id="tvaRate" value="20" min="0" max="100" style="width:65px;display:inline;padding:2px 6px;" oninput="recalc()"></span>
+            <strong id="tTva">0.00 MAD</strong>
+          </div>
+          <div class="tot-row grand"><span>TOTAL TTC</span><strong id="tTtc">0.00 MAD</strong></div>
+        </div>
+      </div>
+
+      <div class="private-box">
+        <div>
+          <strong style="color:var(--cyan);">Indicateur Privé (Masqué dans le PDF client)</strong><br>
+          <span style="font-size:0.86rem;color:#cbd5e1;">Bénéfice Net HT estimé : <strong id="pProfit" style="color:var(--green);">0 MAD</strong> — Marge : <strong id="pMargin" style="color:var(--accent);">0 %</strong></span>
+        </div>
+        <div class="actions" style="margin:0;">
+          <button class="btn btn-primary" onclick="window.print()">Exporter en PDF / Imprimer</button>
+          <button class="btn btn-cyan" onclick="copyTextSummary()">Copier résumé WhatsApp</button>
+        </div>
+      </div>
+
+      <div class="print-sig">Document généré avec Devis Express — 10JITAL (https://10-jital.vercel.app/devis-express.html)</div>
+    </div>
+
+    <footer>© 10JITAL — Outil gratuit 100 % local (vos devis restent sur votre appareil).</footer>
+  </div>
+
+  <script>
+    const tbody = document.getElementById('rowsBody');
+    function fmt(v) {
+      const c = document.getElementById('currency').value;
+      return v.toLocaleString('fr-FR', { minimumFractionDigits:2, maximumFractionDigits:2 }) + ' ' + c;
+    }
+    function addRow(desc='', qty=1, price=0, cost=0) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><input type="text" value="${desc}" oninput="recalc()"></td>
+        <td class="num"><input type="number" value="${qty}" min="0" step="1" class="r-qty" oninput="recalc()"></td>
+        <td class="num"><input type="number" value="${price}" min="0" step="0.5" class="r-price" oninput="recalc()"></td>
+        <td class="num no-print"><input type="number" value="${cost}" min="0" step="0.5" class="r-cost" oninput="recalc()"></td>
+        <td class="num r-total" style="font-weight:700;">0.00</td>
+        <td class="no-print"><button class="btn-del" onclick="this.closest('tr').remove();recalc();">×</button></td>`;
+      tbody.appendChild(tr);
+      recalc();
+    }
+    function recalc() {
+      let sub = 0, totalCost = 0;
+      tbody.querySelectorAll('tr').forEach(tr => {
+        const q = parseFloat(tr.querySelector('.r-qty').value) || 0;
+        const p = parseFloat(tr.querySelector('.r-price').value) || 0;
+        const c = parseFloat(tr.querySelector('.r-cost').value) || 0;
+        const line = q * p;
+        sub += line;
+        totalCost += q * c;
+        tr.querySelector('.r-total').textContent = fmt(line);
+      });
+      const tvaPct = parseFloat(document.getElementById('tvaRate').value) || 0;
+      const tva = sub * (tvaPct / 100);
+      const ttc = sub + tva;
+      const profit = sub - totalCost;
+      const margin = sub > 0 ? (profit / sub) * 100 : 0;
+
+      document.getElementById('tSub').textContent = fmt(sub);
+      document.getElementById('tTva').textContent = fmt(tva);
+      document.getElementById('tTtc').textContent = fmt(ttc);
+      document.getElementById('pProfit').textContent = fmt(profit);
+      document.getElementById('pMargin').textContent = margin.toFixed(1) + ' %';
+    }
+    function copyTextSummary() {
+      const type = document.getElementById('docType').value;
+      const num = document.getElementById('docNum').value;
+      const ttc = document.getElementById('tTtc').textContent;
+      const txt = `${type} N° ${num}\nMontant Total TTC : ${ttc}\n---\nGénéré avec 10JITAL : https://10-jital.vercel.app/devis-express.html`;
+      navigator.clipboard.writeText(txt).then(() => alert('Résumé copié pour WhatsApp / Email !'));
+    }
+
+    addRow('Création Landing Page / Tunnel de vente', 1, 2500, 400);
+    addRow('Pack Visuels & Branding 10JITAL', 1, 900, 150);
+  </script>
+</body>
+</html>
